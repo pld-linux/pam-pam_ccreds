@@ -8,6 +8,7 @@ Group:		Applications/System
 Source0:	http://www.padl.com/download/pam_ccreds-%{version}.tar.gz
 # Source0-md5:	7dfba0860195d63e173bdb08450462d7
 URL:		http://www.padl.com/OSS/pam_ccreds.html
+BuildRequires:	autoconf
 BuildRequires:	pam-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
