@@ -1,5 +1,6 @@
 %define 	modulename pam_ccreds
 Summary:	PAM cached credentials module
+Summary(pl.UTF-8):	Moduł PAM do zapamiętywania danych uwierzytelniających
 Name:		pam-%{modulename}
 Version:	4
 Release:	1
@@ -9,6 +10,8 @@ Source0:	http://www.padl.com/download/pam_ccreds-%{version}.tar.gz
 # Source0-md5:	7dfba0860195d63e173bdb08450462d7
 URL:		http://www.padl.com/OSS/pam_ccreds.html
 BuildRequires:	autoconf
+BuildRequires:	db-devel
+BuildRequires:	openssl-devel
 BuildRequires:	pam-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -17,7 +20,15 @@ The pam_ccreds module provides the means for Linux workstations to
 locally authenticate using an enterprise identity when the network is
 unavailable. Used in conjunction with the nss_updatedb utility, it
 provides a mechanism for disconnected use of network directories. They
-are designed to work with pam_ldap and nss_ldap
+are designed to work with pam_ldap and nss_ldap.
+
+%description -l pl.UTF-8
+Moduł pam_ccreds umożliwia stacjom linuksowym na lokalne
+uwierzytelnianie przy użyciu firmowej tożsamości podczas
+niedostępności sieci. Używany w połączeniu z narzędziem nss_updatedb
+udostępnia mechanizm do używania katalogów sieciowych przy braku
+połączenia. Narzędzia te są zaprojektowane do użytku z pam_ldap i
+nss_ldap.
 
 %prep
 %setup -q -n %{modulename}-%{version}
@@ -38,5 +49,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS COPYING README ChangeLog
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) /%{_lib}/security/pam_ccreds.so
