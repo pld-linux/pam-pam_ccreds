@@ -2,12 +2,12 @@
 Summary:	PAM cached credentials module
 Summary(pl.UTF-8):	Moduł PAM do zapamiętywania danych uwierzytelniających
 Name:		pam-%{modulename}
-Version:	4
+Version:	10
 Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://www.padl.com/download/pam_ccreds-%{version}.tar.gz
-# Source0-md5:	7dfba0860195d63e173bdb08450462d7
+# Source0-md5:	21b008071ee8bfb998bd499c0fa92ba1
 URL:		http://www.padl.com/OSS/pam_ccreds.html
 BuildRequires:	autoconf
 BuildRequires:	db-devel
